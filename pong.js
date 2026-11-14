@@ -1,6 +1,8 @@
 paddle1 = {"x":50, "y": 0, "xvel": 0};
 paddle2 = {"x":50, "y": 0, "xvel": 0};
 ball = {"x": 50, "y": 80, "xvel": 1, "yvel":-1};
+let score1 = 0;
+let score2 = 0;
 
 let speed = 1;
 
@@ -23,6 +25,7 @@ function gameloop()
 	document.getElementById("paddle-2").style.left = paddle2.x + "vw";
 	document.getElementById("ball").style.left = ball.x + "vw";
 	document.getElementById("ball").style.top = ball.y + "vh";
+	UI();
 };
 
 function bounce_ball()
@@ -38,6 +41,7 @@ function bounce_ball()
 	if ((ball.y > 100) || (ball.y < 0)) { 
 		console.log("ballx: " + ball.x + "y: " +ball.y + "paddle2x: " + paddle2.x);
 		//ball.yvel = ball.yvel * -1; 
+		if (ball.y > 100) { score1 += 1; } else { score2 += 1; };
 		clearInterval(gameloopi)
 	};
 };
@@ -73,3 +77,9 @@ function handleKeyPress(event)
 };
 
 gameloopi = setInterval(gameloop, 34);
+
+function UI()
+{
+	document.getElementById("score").innerHTML = `P1 Score: ${score1} <br> P2 Score: ${score2}`;
+
+}
