@@ -59,27 +59,36 @@ function pointTowardsCircle(player, circle)
 
 function movePlayer()
 {
-	document.getElementById("player").style.top = player.y;
-	document.getElementById("player").style.left = player.x;
+	player.x += player.xvel;
+	document.getElementById("player").style.top = player.y + "rem";
+	document.getElementById("player").style.left = player.x + "rem";
 };
 function gameloop()
 {
 	movePlayer()
 };
 	
-setInterval(gameloop, 34);
 
-document.getElementsByTagName("body")[0].addEventListener("keydown", handleKeyPress);
 
 function handleKeyPress(event)
 {
+	console.log(event);
 	switch(event.key) {
-		case "ArrowLeft":
-			xvel = -1;
+		case "ArrowLeft": case "a":
+			player.xvel = -1;
 			break;
-		case "ArrowRight":
-			xvel = 1;
+		case "ArrowRight": case "d":
+			player.xvel = 1;
 			break;
 	};
 };
 
+function handleKeyUp(event)
+{
+	player.xvel = 0;
+};
+
+document.getElementsByTagName("body")[0].addEventListener("keydown", handleKeyPress);
+document.getElementsByTagName("body")[0].addEventListener("keyup", handleKeyUp);
+
+setInterval(gameloop, 34);
