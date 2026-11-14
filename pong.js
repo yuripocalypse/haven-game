@@ -25,11 +25,11 @@ function gameloop()
 function bounce_ball()
 {
 	if ((ball.x > 100) || (ball.x < 0)) { ball.xvel = ball.xvel * -1; };
-	if ((100> (ball.y+2) && (ball.y+2) > 96)) { if (paddle2.x-4 <= ball.x <= paddle2.x + 14) {
+	if ((100> (ball.y+2) && (ball.y+2) > 96)) { if (paddle2.x-4 <= ball.x && ball.x <= paddle2.x + 14) {
 		ball.yvel = ball.yvel * -1;
 		console.log("bounce2");
 	} console.log("paddle2y");} else { console.log(ball.y);};
-	if ((2> ball.y > 0)) { if (paddle1.x-4 <= ball.x <= paddle1.x + 14) {
+	if ((2> ball.y > 0)) { if (paddle1.x-4 <= ball.x && ball.x <= paddle1.x + 14) {
 		ball.yvel = ball.yvel * -1;
 		console.log("bounce1");
 	}};
@@ -38,6 +38,7 @@ function bounce_ball()
 		console.log("ballx: " + ball.x + "y: " +ball.y + "paddle2x: " + paddle2.x);
 		//ball.yvel = ball.yvel * -1; 
 		console.log("you died LOL");
+		alert("You died :p");
 		clearInterval(gameloopi)
 	};
 };
