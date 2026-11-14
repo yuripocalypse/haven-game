@@ -68,6 +68,6 @@ gameloopi = setInterval(gameloop, 34);
 
 function UI()
 {
-	document.getElementById("score").innerHTML = `P1 Score: ${score1}`;
+	document.getElementById("score").innerHTML = `P1 Score: ${score1} <br> P2 Score: ${score2}`;
 
 }
