@@ -11,8 +11,8 @@ document.getElementsByTagName("body")[0].addEventListener("keydown", handleKeyPr
 
 function gameloop()
 {
-	paddle1.x += paddle1.xvel;
-	paddle2.x += paddle2.xvel;
+	paddle1.x += paddle1.xvel *speed;
+	paddle2.x += paddle2.xvel*speed;
 	ball.x += ball.xvel * speed;
 	ball.y += ball.yvel * speed;
 	if (paddle1.x > 100) { paddle1.x = 100; };
@@ -33,9 +33,11 @@ function bounce_ball()
 	if ((ball.x > 100) || (ball.x < 0)) { ball.xvel = ball.xvel * -1; };
 	if ((100> (ball.y+2) && (ball.y+2) > 96)) { if (paddle2.x-4 <= ball.x && ball.x <= paddle2.x + 14) {
 		ball.yvel = ball.yvel * -1;
+		speed += 0.1;
 	} console.log("paddle2y");} else { console.log(ball.y);};
 	if ((2> ball.y > 0)) { if (paddle1.x-4 <= ball.x && ball.x <= paddle1.x + 14) {
 		ball.yvel = ball.yvel * -1;
+		speed+= 0.1;
 	}};
 	
 	if ((ball.y > 100) || (ball.y < 0)) { 
