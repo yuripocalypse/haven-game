@@ -2,6 +2,8 @@
 	height: 2vh;
 	width: 10vw;
 	background-color: lightblue;
+	background-size: fill;
+
 	position: fixed;
 }
 
@@ -16,8 +18,16 @@
 .ball {
 	height: 2vw;
 	width: 2vw;
-	background-color: yellow;
+	background-image: url('arizonacan.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 	border-radius:100%;
 	position: fixed;
 	top: 50vh;
+}
+
+body {
+	background-image: url('background.png');
+	background-size: stretch;
+	background-repeat: no-repeat;
 }
