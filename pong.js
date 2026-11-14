@@ -52,6 +52,7 @@ function restart()
 	paddle1 = {"x":50, "y": 0, "xvel": 0};
 	paddle2 = {"x":50, "y": 0, "xvel": 0};
 	ball = {"x": 50, "y": 80, "xvel": 1, "yvel":-1};
+	clearInterval(gameloopi);
 	gameloopi = setInterval(gameloop, 34);
 };
 
