@@ -51,7 +51,7 @@ function restart()
 	speed = 1;
 	paddle1 = {"x":50, "y": 0, "xvel": 0};
 	paddle2 = {"x":50, "y": 0, "xvel": 0};
-	ball = {"x": 50, "y": 80, "xvel": 1, "yvel":-1};
+	ball = {"x": 75, "y": 75, "xvel": 1, "yvel":-1};
 	clearInterval(gameloopi);
 	gameloopi = setInterval(gameloop, 34);
 };
@@ -81,6 +81,6 @@ gameloopi = setInterval(gameloop, 34);
 
 function UI()
 {
-	document.getElementById("score").innerHTML = `P1 Score: ${score1} <br> P2 Score: ${score2}`;
+	document.getElementById("score").innerHTML = `P1 Score: ${score1} <br> P2 Score: ${score2} <br> Speed: ${speed}`;
 
 }

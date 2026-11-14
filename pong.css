@@ -32,3 +32,6 @@ body {
 	background-repeat: no-repeat;
 	font-family: 'bubblegum-sans', 'comic sans', cursive;
 }
+button {
+	font-family: 'comic sans', cursive;
+}
