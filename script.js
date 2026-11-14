@@ -52,8 +52,18 @@ function findClosestCircle(player)
 	return s_d_i;
 };
 
+function pointTowardsCircle(player, circle)
+{
+	};
+
+function movePlayer()
+{
+	document.getElementById("player").style.top = player.y;
+	document.getElementById("player").style.left = player.x;
+};
 function gameloop()
 {
+	movePlayer()
 };
 	
-	
+setInterval(gameloop, 34);
