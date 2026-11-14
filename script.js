@@ -14,9 +14,19 @@ function addCircle(size, colour, x, y) {
 };
 
 function drawCircle(circle) {
-	let circlestring = `<DIV class="circle" style="height:${circle.size}rem; width: ${circle.size}rem; border-radius: 100%; background-color: ${circle.colour}"> </DIV>`;
+	let circlestring = `<DIV class="circle" style="height:${circle.size}rem; width: ${circle.size}rem; border-radius: 100%; background-color: ${circle.colour}; position: fixed; top: ${circle.y}rem; left: ${circle.x}rem;"> </DIV>`;
 	document.getElementById("circles").innerHTML += circlestring;
 };
+const colours = ["red", "green", "yellow", "purple"];
+function randomCircles(count) 
+{
+	for (x = 5; x < 295; x+=13) {
+		for (y = 5; y < 95; y+=13) {
+			addCircle(5 + 2*Math.random() ,colours[Math.floor(Math.random() * colours.length)], x, y);
+		};
+	};
+};
 
-addCircle(5, "green", 1, 1);
+randomCircles(5);
+
 	

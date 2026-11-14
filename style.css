@@ -1,2 +1,6 @@
 .circle {
-};
+}
+
+#circles {
+	overflow-x: visible;
+}
