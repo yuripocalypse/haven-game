@@ -1,5 +1,6 @@
 let circles = [];
-let player = {"x": 5, "y": 5, "height": 2};
+let player = {"x": 5, "y": 5, "height": 2, "xvel": 0};
+
 
 function Circle(size, x, y, colour) {
 	this.size = size;
@@ -67,3 +68,18 @@ function gameloop()
 };
 	
 setInterval(gameloop, 34);
+
+document.getElementsByTagName("body")[0].addEventListener("keydown", handleKeyPress);
+
+function handleKeyPress(event)
+{
+	switch(event.key) {
+		case "ArrowLeft":
+			xvel = -1;
+			break;
+		case "ArrowRight":
+			xvel = 1;
+			break;
+	};
+};
+
